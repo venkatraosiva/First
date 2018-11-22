@@ -7,8 +7,7 @@
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-current.xsd">
-    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="${http.port}" doc:name="HTTP Listener Configuration"/>
-    <context:property-placeholder location="property-${env}.properties"/>
+    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>
     <flow name="propertyFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/hello" doc:name="HTTP"/>
         <set-payload value="Hello World" doc:name="Set Payload"/>
